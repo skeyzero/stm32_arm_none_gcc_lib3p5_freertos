@@ -1,0 +1,8 @@
+core_cm3.c文件不能使用3.5库里面的，使用3.3库的core_cm3.c是可以使用的。否则会报以下错误：
+/tmp/cc2qqQSy.s: Assembler messages:
+/tmp/cc2qqQSy.s:564: Error: registers may not be the same -- `strexb r0,r0,[r1]'
+/tmp/cc2qqQSy.s:592: Error: registers may not be the same -- `strexh r0,r0,[r1]'
+<builtin>: recipe for target 'core_cm3.o' failed
+
+对比了一下两个文件，实际上是一样的，可能某个字符格式不对导致出问题了。
+在别的地方找一个替代即可。
